@@ -19,6 +19,6 @@ model Cantante{
 model Cancion{
   idcancion Int @id @default(autoincrement())
   nombre String
-  cantante Cantante  @relation(fields: [catante_idcancante], references: [idcantante])
-  catante_idcancante Int
+  cantante Cantante  @relation(fields: [cantante_idcantante], references: [idcantante])
+  cantante_idcantante Int
 }
