@@ -1,17 +1,17 @@
-# base image
-FROM node:alpine
+FROM node:16-alpine
 
-# create & set working directory
-RUN mkdir -p /usr/src
-WORKDIR /usr/src
+RUN mkdir -p /app
 
-# copy source files
-COPY . /usr/src
+WORKDIR /app
 
-# install dependencies
-RUN npm install
+COPY package.json /app
 
-# start app
-RUN npm run build
+RUN yarn install
+
+COPY . /app
+
+RUN yarn build
+
 EXPOSE 3000
-CMD npm run start
+
+CMD [ "yarn", "start" ]
