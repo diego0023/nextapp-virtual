@@ -6,9 +6,9 @@ WORKDIR /app
 
 COPY package.json /app
 
-RUN yarn prisma generate
-
 RUN yarn install
+
+RUN yarn prisma generate
 
 COPY . /app
 
