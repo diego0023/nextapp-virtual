@@ -8,9 +8,9 @@ COPY package.json /app
 
 RUN yarn install
 
-RUN yarn prisma generate
-
 COPY . /app
+
+RUN yarn prisma generate
 
 RUN yarn build
 
